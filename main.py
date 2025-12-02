@@ -8,6 +8,7 @@ def get_gamepasses(user_id):
 
     r = requests.get(f"https://games.roproxy.com/v2/users/{user_id}/games?accessFilter=2&sortOrder=Asc&limit=10")
     if r.status_code != 200:
+        print("Code 200")
         return []
 
     data = r.json().get("data", [])
@@ -27,6 +28,7 @@ def get_gamepasses(user_id):
 
             all_gamepasses.append(asset_id)
 
+    print(all_gamepasses)
     return all_gamepasses
 
 @app.route("/api/gamepasses", methods=["GET"])
