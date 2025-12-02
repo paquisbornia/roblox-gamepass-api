@@ -19,8 +19,9 @@ def get_gamepasses(user_id):
         if not universe_id:
             continue
         gp_request = requests.get(
-            f"https://games.roblox.com/v1/games/{universe_id}/game-passes?limit=100&sortOrder=1"
+            f"https://apis.roblox.com/game-passes/v1/games/{universe_id}/game-passes?limit=100&sortOrder=1"
         )
+        print(gp_request)
         if gp_request.status_code != 200:
             continue
 
