@@ -32,11 +32,12 @@ def get_gamepasses(user_id):
 @app.route("/api/gamepasses", methods=["GET"])
 def api_gamepasses():
     user_id = request.args.get("userId")
-    
+    print(user_id)
     if not user_id or not user_id.isdigit():
         return jsonify({"error": "Parâmetro 'userId' ausente ou inválido"}), 400
 
     data = get_gamepasses(user_id)
+    print(data)
     return jsonify(data)
 
 if __name__ == "__main__":
