@@ -12,9 +12,9 @@ def get_gamepasses(user_id):
         return []
 
     data = r.json().get("data", [])
-    print("Data: "+data)
+    print("Data: ", data)
     for game in data:
-        print("Game: "+game)
+        print("Game: ", game)
         universe_id = game.get("id")
         if not universe_id:
             continue
