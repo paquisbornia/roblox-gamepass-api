@@ -26,8 +26,7 @@ def get_gamepasses(user_id):
             continue
         print("Working")
         gamepasses = gp_request.json()
-        print(gamepasses)
-        gamepasses = gamepasses.get("data", [])
+        gamepasses = gamepasses.get("gamePasses", [])
         for gp in gamepasses:
             print(gp)
             asset_id = gp["id"]
