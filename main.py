@@ -24,9 +24,11 @@ def get_gamepasses(user_id):
         print(gp_request)
         if gp_request.status_code != 200:
             continue
-
+        print("Working")
         gamepasses = gp_request.json().get("data", [])
+        print(gamepasses)
         for gp in gamepasses:
+            print(gp)
             asset_id = gp["id"]
 
             all_gamepasses.append(asset_id)
